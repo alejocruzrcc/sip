@@ -26,8 +26,10 @@ module Sip
           #  class_name: "Sip::ActorsocialPersona", #inverse_of: :persona
           has_many :persona_trelacion1, foreign_key: "persona1", validate: true,
             class_name: "Sip::PersonaTrelacion"
+          accepts_nested_attributes_for :persona_trelacion1, reject_if: :all_blank, allow_destroy: true
           has_many :persona_trelacion2, foreign_key: "persona2", validate: true,
             class_name: "Sip::PersonaTrelacion"
+           accepts_nested_attributes_for :persona_trelacion2, reject_if: :all_blank, allow_destroy: true
           belongs_to :clase, class_name: 'Sip::Clase',
             foreign_key: "id_clase", validate: true, optional: true
           belongs_to :nacional, class_name: "Sip::Pais",

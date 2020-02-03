@@ -108,7 +108,8 @@ module Sip
               :id_departamento,
               :id_municipio,
               :id_clase,
-              :tdocumento_id
+              :tdocumento_id,
+              :id_destroy
             ]
           end
 
