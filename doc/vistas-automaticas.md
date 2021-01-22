@@ -402,7 +402,17 @@ archivo `app/views/tasascambio/_campo_tipomoneda_id.html.erb` con contenido:
 
 El contenido de un campo puede presentarse de forma personalizada bien 
 con la función `presenta` del modelo  o bien con una vista parcial de 
-nombre `_show_campo_nombrecampo`.  Ambas situaciones son análogas en la 
+nombre `_show_campo_nombrecampo`.
+Por ejemplo, para el caso de querer crear una vista parcial diferente, cuyo
+campo no está definido o es una información adicional, debe agregar un nuevo
+campo a atributos_show en el controlador correspondiente y posteriormente crear
+la vista parcial con el prefijo 'show' y el campo agregado. Véase un ejemplo
+en la forma como se visualiza la tabla de listado de asistencia en la vista show
+de la actividad, agregando el campo :listado_casos, en atributos_show en `https://github.com/pasosdeJesus/sivel2_sjrcol/blob/master/app/controllers/cor1440_gen/actividades_controller.rb` 
+y la creación de la vista `https://github.com/pasosdeJesus/sivel2_sjrcol/blob/master/app/views/cor1440_gen/actividades/_show_listado_casos.html.erb`. 
+Ya en la vista es posible acceder al objeto desde @registro por ejemplo. 
+
+Las situaciones en show son análogas en la 
 vista `index` por lo que lo referenciamos a ver la sección 4.1.
 
 Los botones de esta vista puede configurarse por completo para un modelo con 
